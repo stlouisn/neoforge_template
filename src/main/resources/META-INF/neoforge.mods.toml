@@ -27,10 +27,10 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
-modId = "cloth-config"
+modId = "cloth_config"
 type = "required"
 versionRange = ">=${cloth_config_version}"
-ordering = "NONE"
+ordering = "AFTER"
 side = "BOTH"
 
 [[mixins]]
