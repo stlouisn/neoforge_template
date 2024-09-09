@@ -1,5 +1,6 @@
 package dev.mod_id;
 
+import dev.mod_id.Constants;
 import net.neoforged.fml.common.Mod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
