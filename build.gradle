@@ -53,13 +53,13 @@ dependencies {
   // Mappings - Yarn
   mappings loom.layered() {
     it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
-    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${neoforge_mappings}"
+    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
   }
 
   // Mappings - Parchment + Yarn
   mappings loom.layered() {
     it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
-    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${neoforge_mappings}"
+    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
     it.parchment "org.parchmentmc.data:parchment-${parchment_version}@zip"
   }
 
