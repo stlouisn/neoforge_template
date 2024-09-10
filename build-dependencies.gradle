@@ -1,9 +1,7 @@
 / Cloth Config /
 
 def cloth_config_version = "15.0.130" // https://modrinth.com/mod/cloth-config/versions
-repositories {
-  maven { url = "https://maven.shedaniel.me/" }
-}
+repositories { maven { url = "https://maven.shedaniel.me/" } }
 dependencies {
   modApi( "me.shedaniel.cloth:cloth-config-neoforge:${cloth_config_version}" )
 }
@@ -11,9 +9,7 @@ dependencies {
 / Mixin Extras /
 
 def mixinextras_version = "0.4.1" // https://github.com/LlamaLad7/MixinExtras/releases
-repositories {
-  maven { url = "https://jitpack.io" }
-}
+repositories { maven { url = "https://jitpack.io" } }
 dependencies {
   include( implementation( annotationProcessor( "io.github.llamalad7:mixinextras-neoforge:${mixinextras_version}" )))
 }
@@ -21,9 +17,7 @@ dependencies {
 / Yet Another Config Lib /
 
 def yacl_version = "3.5.0+1.21-fabric" // https://docs.isxander.dev/yet-another-config-lib/installing-yacl
-repositories {
-  maven { url = "https://maven.isxander.dev/releases" }
-}
+repositories { maven { url = "https://maven.isxander.dev/releases" } }
 dependencies {
   modImplementation( "dev.isxander:yet-another-config-lib:${yacl_version}" )
 }
