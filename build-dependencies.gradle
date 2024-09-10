@@ -1,3 +1,5 @@
+/ No Dependencies /
+
 / Mixin Extras /
 repositories{ maven{ url = "https://jitpack.io" }}
 dependencies{ include( implementation( annotationProcessor( "io.github.llamalad7:mixinextras-neoforge:${mixinextras_version}" )))}
