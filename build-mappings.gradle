@@ -4,7 +4,7 @@ dependencies {
 }
 
 / Mojang + Parchment /
-repositories{ maven{ url = "https://maven.parchmentmc.org" }}
+repositories { maven { url = "https://maven.parchmentmc.org" }}
 dependencies {
   mappings loom.layered() {
     it.officialMojangMappings {
@@ -23,6 +23,7 @@ dependencies {
 }
 
 / Yarn + Parchment /
+repositories { maven { url = "https://maven.parchmentmc.org" }}
 dependencies {
   mappings loom.layered() {
     it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
