@@ -16,91 +16,26 @@ base {
 }
 
 repositories {
-
-  // Cloth Config
-  maven { url = "https://maven.shedaniel.me/" }
-
-  // Yet Another Config Library
-  maven { url = "https://maven.isxander.dev/releases" }
-
-  // Mixin Extras
-  maven { url = "https://jitpack.io" }
-
-  // neoForge
   maven { url = "https://maven.neoforged.net/releases" }
-
-  // Parchment MC
   maven { url = "https://maven.parchmentmc.org" }
-
 }
 
 dependencies {
-
-  // Minecraft
-  minecraft "com.mojang:minecraft:${minecraft_version}"
-
-  // neoForge
-  neoForge "net.neoforged:neoforge:${neoforge_version}"
-
-  // RefMap
-  loom {
-    mixin {
-      mixin.useLegacyMixinAp = true
-      defaultRefmapName.set("${archives_base_name}.refmap.json")
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    neoForge "net.neoforged:neoforge:${neoforge_version}"
+    loom {
+        mixin {
+            mixin.useLegacyMixinAp = true
+            defaultRefmapName.set("${archives_base_name}.refmap.json")
+        }
+        if (file("src/main/resources/${archives_base_name}.accesswidener").exists()) {
+            accessWidenerPath = file("src/main/resources/${archives_base_name}.accesswidener")
+        }
     }
-  }
-
-  // AccessWidener
-  loom {
-    if (file("src/main/resources/${archives_base_name}.accesswidener").exists()) {
-      accessWidenerPath = file("src/main/resources/${archives_base_name}.accesswidener")
-    }
-  }
-
 }
 
-/* MAPPINGS */
-dependencies {
-
-  // Mappings - Mojang
-  mappings(loom.officialMojangMappings())
-
-  // Mappings - Mojang + Parchment
-  mappings loom.layered() {
-    it.officialMojangMappings {
-      setNameSyntheticMembers(false)
-    }
-    it.parchment "org.parchmentmc.data:parchment-${parchment_version}@zip"
-  }
-  
-  // Mappings - Yarn
-  mappings loom.layered() {
-    it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
-    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
-  }
-
-  // Mappings - Yarn + Parchment
-  mappings loom.layered() {
-    it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
-    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
-    it.parchment "org.parchmentmc.data:parchment-${parchment_version}@zip"
-  }
-
-}
-
-/* OPTIONAL */
-dependencies {
-
-  // Cloth Config API
-  modApi ("me.shedaniel.cloth:cloth-config-neoforge:${cloth_config_version}")
-
-  // Mixin Extras - Implementation
-  include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-neoforge:${mixinextras_version}")))
-
-  // Yet Another Config Library
-  modImplementation ("dev.isxander:yet-another-config-lib:$yacl_version")
-
-}
+apply from: "build-mappings.gradle"
+apply from: "build-deps.gradle"
 
 java {
   sourceCompatibility = JavaVersion.VERSION_21
