@@ -1,29 +1,32 @@
-/ choose one /
-
+/ Mojang /
 dependencies {
-
-  // Mappings - Mojang
   mappings(loom.officialMojangMappings())
+}
 
-  // Mappings - Mojang + Parchment
+/ Mojang + Parchment /
+repositories{ maven{ url = "https://maven.parchmentmc.org" }}
+dependencies {
   mappings loom.layered() {
     it.officialMojangMappings {
       setNameSyntheticMembers(false)
     }
     it.parchment "org.parchmentmc.data:parchment-${parchment_version}@zip"
   }
-  
-  // Mappings - Yarn
+}
+
+/ Yarn /
+dependencies {
   mappings loom.layered() {
     it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
     it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
   }
+}
 
-  // Mappings - Yarn + Parchment
+/ Yarn + Parchment /
+dependencies {
   mappings loom.layered() {
     it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
     it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
     it.parchment "org.parchmentmc.data:parchment-${parchment_version}@zip"
   }
-
 }
