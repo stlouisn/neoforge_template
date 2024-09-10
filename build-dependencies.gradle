@@ -1,13 +1,13 @@
 / No Dependencies /
 
 / Mixin Extras /
-repositories{ maven{ url = "https://jitpack.io" }}
-dependencies{ include( implementation( annotationProcessor( "io.github.llamalad7:mixinextras-neoforge:${mixinextras_version}" )))}
+repositories { maven { url = "https://jitpack.io" }}
+dependencies { include ( implementation ( annotationProcessor( "io.github.llamalad7:mixinextras-neoforge:${mixinextras_version}" )))}
 
 / Cloth Config /
-repositories{ maven{ url = "https://maven.shedaniel.me/" }}
-dependencies{ modApi( "me.shedaniel.cloth:cloth-config-neoforge:${cloth_config_version}" )}
+repositories { maven { url = "https://maven.shedaniel.me/" }}
+dependencies { modApi ( "me.shedaniel.cloth:cloth-config-neoforge:${cloth_config_version}" )}
 
 / Yet Another Config Lib /
-repositories{ maven{ url = "https://maven.isxander.dev/releases" }}
-dependencies{ modImplementation( "dev.isxander:yet-another-config-lib:${yacl_version}" )}
+repositories { maven { url = "https://maven.isxander.dev/releases" }}
+dependencies { modImplementation ( "dev.isxander:yet-another-config-lib:${yacl_version}" )}
