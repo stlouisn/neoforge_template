@@ -20,6 +20,9 @@ repositories {
   // Cloth Config
   maven { url = "https://maven.shedaniel.me/" }
 
+  // Yet Another Config Library
+  maven { url = "https://maven.isxander.dev/releases" }
+
   // Mixin Extras
   maven { url = "https://jitpack.io" }
 
@@ -39,30 +42,6 @@ dependencies {
   // neoForge
   neoForge "net.neoforged:neoforge:${neoforge_version}"
 
-  // Mappings - Mojang
-  mappings(loom.officialMojangMappings())
-
-  // Mappings - Parchment + Mojang
-  mappings loom.layered() {
-    it.officialMojangMappings {
-      setNameSyntheticMembers(false)
-    }
-    it.parchment "org.parchmentmc.data:parchment-${parchment_version}@zip"
-  }
-  
-  // Mappings - Yarn
-  mappings loom.layered() {
-    it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
-    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
-  }
-
-  // Mappings - Parchment + Yarn
-  mappings loom.layered() {
-    it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
-    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
-    it.parchment "org.parchmentmc.data:parchment-${parchment_version}@zip"
-  }
-
   // RefMap
   loom {
     mixin {
@@ -80,13 +59,46 @@ dependencies {
 
 }
 
+/* MAPPINGS */
+dependencies {
+
+  // Mappings - Mojang
+  mappings(loom.officialMojangMappings())
+
+  // Mappings - Mojang + Parchment
+  mappings loom.layered() {
+    it.officialMojangMappings {
+      setNameSyntheticMembers(false)
+    }
+    it.parchment "org.parchmentmc.data:parchment-${parchment_version}@zip"
+  }
+  
+  // Mappings - Yarn
+  mappings loom.layered() {
+    it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
+    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
+  }
+
+  // Mappings - Yarn + Parchment
+  mappings loom.layered() {
+    it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
+    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
+    it.parchment "org.parchmentmc.data:parchment-${parchment_version}@zip"
+  }
+
+}
+
+/* OPTIONAL */
 dependencies {
 
   // Cloth Config API
   modApi ("me.shedaniel.cloth:cloth-config-neoforge:${cloth_config_version}")
 
-  // Mixin Extras
+  // Mixin Extras - Implementation
   include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-neoforge:${mixinextras_version}")))
+
+  // Yet Another Config Library
+  modImplementation ("dev.isxander:yet-another-config-lib:$yacl_version")
 
 }
 
