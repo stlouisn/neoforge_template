@@ -1,3 +1,4 @@
+
 / Mojang Mappings /
 dependencies {
   loom { silentMojangMappingsLicense() }
