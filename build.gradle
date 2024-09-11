@@ -26,6 +26,13 @@ dependencies {
 apply from: "build-mappings.gradle"
 apply from: "build-dependencies.gradle"
 
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
+
 java {
   sourceCompatibility = JavaVersion.VERSION_21
   targetCompatibility = JavaVersion.VERSION_21
