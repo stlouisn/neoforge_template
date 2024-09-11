@@ -1,4 +1,3 @@
-/ OPTIONAL FILE /
 
 / Mod Name /
 dependencies { modLocalRuntime files ( "/../../Mods/filename.jar" ) }
