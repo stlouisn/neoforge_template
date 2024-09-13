@@ -1,0 +1,9 @@
+{
+  "mod_id.configuration.title": "Mod Name",
+  "mod_id.configuration.section.mod_id.common.toml": "Common Settings",
+  "mod_id.configuration.section.mod_id.common.toml.title": "Mod Name",
+  "mod_id.configuration.variableName1": "Variable Name",
+  "mod_id.configuration.variableName1.tooltip": "Tooltip here.",
+  "mod_id.configuration.variableName2": "Variable Name",
+  "mod_id.configuration.variableName2.tooltip": "Tooltip here."
+}
