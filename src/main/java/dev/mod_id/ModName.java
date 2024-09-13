@@ -8,5 +8,9 @@ import org.slf4j.LoggerFactory;
 @Mod(Constants.MOD_ID)
 public final class ModName {
 
-  public static final Logger LOGGER = LoggerFactory.getLogger(Constants.MOD_ID);
+  public static final Logger LOGGER = LoggerFactory.getLogger(ModConstants.MOD_ID);
+
+  public ModName(ModContainer container) {
+    container.registerConfig(Type.COMMON, ConfigHandler.configSpec);
+  }
 }
