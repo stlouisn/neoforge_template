@@ -1,11 +1,4 @@
 / Mojang Mappings /
-dependencies {
-  loom { silentMojangMappingsLicense() }
-  mappings(loom.officialMojangMappings())
-}
-println("\nMojang Mappings: $minecraft_version")
-
-/ Mojang + Parchment Mappings /
 repositories { maven { url = "https://maven.parchmentmc.org" }}
 dependencies {
   loom { silentMojangMappingsLicense() }
@@ -18,16 +11,6 @@ println("\nMojang Mappings: $minecraft_version")
 println("ParchmentMC: $parchment_version")
 
 / Yarn Mappings /
-dependencies {
-  mappings loom.layered() {
-    it.mappings "net.fabricmc:yarn:${yarn_mappings}:v2"
-    it.mappings "dev.architectury:yarn-mappings-patch-neoforge:${yarn_mappings_patch_neoforge}"
-  }
-}
-println("\nYarn Mappings: $yarn_mappings")
-println("NeoForge Yarn Patch: $yarn_mappings_patch_neoforge")
-
-/ Yarn + Parchment Mappings /
 repositories { maven { url = "https://maven.parchmentmc.org" }}
 dependencies {
   mappings loom.layered() {
