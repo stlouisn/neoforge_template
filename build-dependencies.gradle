@@ -11,3 +11,9 @@ repositories { maven { url = "https://maven.isxander.dev/releases" }}
 dependencies { modImplementation ( "thedarkcolour:kotlinforforge-neoforge:latest.release" )}
 dependencies { modImplementation ( "dev.isxander:yet-another-config-lib:${yacl_version}-neoforge" )}
 println("\nYet Another Config Library: $yacl_version")
+
+/ Balm /
+def balm_file_id = "5676524" // https://www.curseforge.com/minecraft/mc-mods/balm/files/all?gameVersionTypeId=6
+repositories { maven { url = "https://www.cursemaven.com" }}
+dependencies { modImplementation ( "curse.maven:balm-531761:${balm_file_id}" )}
+println("\nBalm: CurseForge-$balm_file_id")
