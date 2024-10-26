@@ -16,7 +16,7 @@ println ("\n${mod_name}: CurseForge-${mod_project}${mod_file}")
 / Modrinth Mod /
 def mod_slug = "" //  https://modrinth.com/mods?g=categories:neoforge&v=1.21.1
 def mod_version = "" // https://modrinth.com/mod/??????/versions?g=1.21.1&l=neoforge
-repositories { exclusiveContent { forRepository { maven { url = "https://api.modrinth.com/maven" }} filter { includeGroup "maven.modrinth" }}}
+repositories { maven { url = "https://api.modrinth.com/maven" }}
 dependencies { modLocalRuntime ( "maven.modrinth:${mod_slug}:${mod_version}" )}
 println ("\nMod Name: Modrinth-${mod_slug}-${mod_version}")
 
