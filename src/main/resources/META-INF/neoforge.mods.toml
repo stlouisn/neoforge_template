@@ -24,19 +24,12 @@ side = "BOTH"
 [[dependencies.${mod_id}]]
 modId = "minecraft"
 type = "required"
-versionRange = "${minecraft_version}"
+versionRange = ">=${minecraft_version}"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
-modId = "cloth_config"
-type = "required"
-versionRange = "*"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies.${mod_id}]]
-modId = "yet_another_config_lib_v3"
+modId = "modid"
 type = "required"
 versionRange = "*"
 ordering = "AFTER"
