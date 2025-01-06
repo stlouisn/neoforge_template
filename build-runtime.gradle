@@ -1,24 +1,24 @@
 / EMI /
-def emi_version = "1.1.15+1.21.1" // https://modrinth.com/mod/emi/versions?l=neoforge
+def emi_version = "1.1.15+1.21.1" // https://modrinth.com/mod/emi/versions?l=neoforge&g=1.21.1
 repositories { maven { url = "https://maven.terraformersmc.com/" }}
 dependencies { modLocalRuntime ( "dev.emi:emi-neoforge:${emi_version}" )}
 println("\nEMI: $emi_version")
 
-/ CurseForge Mod /
-def mod_name = "Mod Name"
-def mod_filename = "modname"
-def mod_project = "" //  https://www.curseforge.com/minecraft/search?sortBy=relevancy&class=mc-mods&version=1.21.1&gameVersionTypeId=6
-def mod_file = "" // https://curseforge.com/minecraft/mc-mods/??????/files/all&class=mc-mods&version=1.21.1&gameVersionTypeId=6
-repositories { exclusiveContent { forRepository { maven { url = "https://www.cursemaven.com" }} filter { includeGroup "curse.maven" }}}
-dependencies { modLocalRuntime ( "curse.maven:${mod_filename}-${mod_project}:${mod_file}" )}
-println ("\n${mod_name}: CurseForge-${mod_project}${mod_file}")
+/ CurseForge Maven / // https://www.curseforge.com/minecraft/search?class=mc-mods&version=1.21.1&gameVersionTypeId=6
+repositories { maven { url = "https://www.cursemaven.com" }}
 
-/ Modrinth Mod /
-def mod_slug = "" //  https://modrinth.com/mods?g=categories:neoforge&v=1.21.1
-def mod_version = "" // https://modrinth.com/mod/??????/versions?g=1.21.1&l=neoforge
+/ MODNAME /
+def mod_file_id = ""  // https://www.curseforge.com/minecraft/mc-mods/??????/files/all?page=1&pageSize=20&version=1.21.1&gameVersionTypeId=6
+dependencies { modLocalRuntime ( "curse.maven:??????-??????:${mod_file_id}" )}
+println ("\nMODNAME: CurseForge-${mod_file_id}")
+
+/ Modrinth Maven / // https://modrinth.com/mods?g=categories:neoforge&v=1.21.1
 repositories { maven { url = "https://api.modrinth.com/maven" }}
-dependencies { modLocalRuntime ( "maven.modrinth:${mod_slug}:${mod_version}" )}
-println ("\nMod Name: Modrinth-${mod_slug}-${mod_version}")
 
-/ Mod Name /
+/ MODNAME /
+def mod_version = "" // https://modrinth.com/mod/??????/versions?g=1.21.1&l=neoforge
+dependencies { modLocalRuntime ( "maven.modrinth:??????:${mod_version}" )}
+println ("\nMODNAME: Modrinth-${mod_version}")
+
+/ Local Mod /
 dependencies { modLocalRuntime files ( "/../../Mods/filename.jar" )}
