@@ -1,19 +1,19 @@
 / Cloth Config /
-def cloth_config_version = "15.0.130" // https://modrinth.com/mod/cloth-config/versions
+def cloth_config_version = "15.0.130" // https://modrinth.com/mod/cloth-config/versions?l=neoforge&g=1.21.1
 repositories { maven { url = "https://maven.shedaniel.me/" }}
-dependencies { modApi ( "me.shedaniel.cloth:cloth-config-neoforge:${cloth_config_version}" )}
+dependencies { modApi modLocalRuntime ( "me.shedaniel.cloth:cloth-config-neoforge:${cloth_config_version}" )}
 println("\nCloth Config: $cloth_config_version")
 
 / Yet Another Config Library /
-def yacl_version = "3.5.0+1.21" // https://maven.isxander.dev/#/releases/dev/isxander/yet-another-config-lib
-repositories { maven { url = "https://thedarkcolour.github.io/KotlinForForge/" }}
+def yacl_version = "3.6.0+1.21" // https://maven.isxander.dev/#/releases/dev/isxander/yet-another-config-lib
 repositories { maven { url = "https://maven.isxander.dev/releases" }}
-dependencies { modImplementation ( "thedarkcolour:kotlinforforge-neoforge:latest.release" )}
-dependencies { modImplementation ( "dev.isxander:yet-another-config-lib:${yacl_version}-neoforge" )}
+dependencies { modImplementation modLocalRuntime ( "dev.isxander:yet-another-config-lib:${yacl_version}-neoforge" )}
 println("\nYet Another Config Library: $yacl_version")
 
-/ Balm /
-def balm_file_id = "5676524" // https://www.curseforge.com/minecraft/mc-mods/balm/files/all?gameVersionTypeId=6
+/ CurseForge Maven / // https://www.curseforge.com/minecraft/search?class=mc-mods&version=1.21.1&gameVersionTypeId=6
 repositories { maven { url = "https://www.cursemaven.com" }}
+
+/ Balm /
+def balm_file_id = "5676524" // https://www.curseforge.com/minecraft/mc-mods/balm/files/all?version=1.21.1&gameVersionTypeId=6
 dependencies { modImplementation ( "curse.maven:balm-531761:${balm_file_id}" )}
 println("\nBalm: CurseForge-$balm_file_id")
