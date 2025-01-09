@@ -17,3 +17,13 @@ repositories { maven { url = "https://www.cursemaven.com" }}
 def balm_file_id = "5676524" // https://www.curseforge.com/minecraft/mc-mods/balm/files/all?version=1.21.1&gameVersionTypeId=6
 dependencies { modImplementation ( "curse.maven:balm-531761:${balm_file_id}" )}
 println("\nBalm: CurseForge-$balm_file_id")
+
+/ Caelus API /
+def caelus_api_file_id = "5694215" // https://www.curseforge.com/minecraft/mc-mods/caelus/files/all?page=1&pageSize=20&version=1.21.1&gameVersionTypeId=6
+dependencies { modCompileOnly modRuntimeOnly ( "curse.maven:caelus-308989:${caelus_api_file_id}" )}
+println ("\nCaelus API: CurseForge-$caelus_api_file_id")
+
+/ Adorned Curios API /
+def curios_api_file_id = "5740650" // https://www.curseforge.com/minecraft/mc-mods/adorned/files/all?page=1&pageSize=20&version=1.21.1&gameVersionTypeId=6
+dependencies { modCompileOnly modRuntimeOnly ( "curse.maven:adorned-1036809:${curios_api_file_id}" )}
+println ("\nAdorned Curios API: CurseForge-$curios_api_file_id")
