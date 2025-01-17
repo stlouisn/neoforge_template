@@ -23,7 +23,10 @@ def caelus_api_file_id = "5694215" // https://www.curseforge.com/minecraft/mc-mo
 dependencies { modCompileOnly modRuntimeOnly ( "curse.maven:caelus-308989:${caelus_api_file_id}" )}
 println ("\nCaelus API: CurseForge-$caelus_api_file_id")
 
-/ Adorned Curios API /
-def curios_api_file_id = "5740650" // https://www.curseforge.com/minecraft/mc-mods/adorned/files/all?page=1&pageSize=20&version=1.21.1&gameVersionTypeId=6
-dependencies { modCompileOnly modRuntimeOnly ( "curse.maven:adorned-1036809:${curios_api_file_id}" )}
-println ("\nAdorned Curios API: CurseForge-$curios_api_file_id")
+/ Illusive Maven /
+repositories { maven { url = "https://maven.theillusivec4.top/" }}
+
+/ Curios API /
+def curios_api_version = "9.2.2+1.21.1" // https://maven.theillusivec4.top/top/theillusivec4/curios/curios-neoforge/
+dependencies { modCompileOnly ( "top.theillusivec4.curios:curios-neoforge:${curios_api_version}:api" )}
+dependencies { modLocalRuntime ( "top.theillusivec4.curios:curios-neoforge:${curios_api_version}" )}

@@ -1,8 +1,9 @@
+/ Terraformers Maven /
+repositories { maven { url = "https://maven.terraformersmc.com/" }}
+
 / EMI /
 def emi_version = "1.1.18+1.21.1" // https://modrinth.com/mod/emi/versions?l=neoforge&g=1.21.1
-repositories { maven { url = "https://maven.terraformersmc.com/" }}
 dependencies { modLocalRuntime ( "dev.emi:emi-neoforge:${emi_version}" )}
-println("\nEMI: $emi_version")
 
 / CurseForge Maven / // https://www.curseforge.com/minecraft/search?class=mc-mods&version=1.21.1&gameVersionTypeId=6
 repositories { maven { url = "https://www.cursemaven.com" }}
@@ -10,7 +11,7 @@ repositories { maven { url = "https://www.cursemaven.com" }}
 / MODNAME /
 def mod_file_id = ""  // https://www.curseforge.com/minecraft/mc-mods/??????/files/all?page=1&pageSize=20&version=1.21.1&gameVersionTypeId=6
 dependencies { modLocalRuntime ( "curse.maven:??????-??????:${mod_file_id}" )}
-println ("\nMODNAME: CurseForge-${mod_file_id}")
+rintln ("\nMODNAME: CurseForge-${mod_file_id}")
 
 / Modrinth Maven / // https://modrinth.com/mods?g=categories:neoforge&v=1.21.1
 repositories { maven { url = "https://api.modrinth.com/maven" }}
@@ -18,7 +19,6 @@ repositories { maven { url = "https://api.modrinth.com/maven" }}
 / MODNAME /
 def mod_version = "" // https://modrinth.com/mod/??????/versions?g=1.21.1&l=neoforge
 dependencies { modLocalRuntime ( "maven.modrinth:??????:${mod_version}" )}
-println ("\nMODNAME: Modrinth-${mod_version}")
 
 / Local Mod /
 dependencies { modLocalRuntime files ( "/../../Mods/filename.jar" )}
