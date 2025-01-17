@@ -18,11 +18,6 @@ def balm_file_id = "5676524" // https://www.curseforge.com/minecraft/mc-mods/bal
 dependencies { modImplementation ( "curse.maven:balm-531761:${balm_file_id}" )}
 println("\nBalm: CurseForge-$balm_file_id")
 
-/ Caelus API /
-def caelus_api_file_id = "5694215" // https://www.curseforge.com/minecraft/mc-mods/caelus/files/all?page=1&pageSize=20&version=1.21.1&gameVersionTypeId=6
-dependencies { modCompileOnly modRuntimeOnly ( "curse.maven:caelus-308989:${caelus_api_file_id}" )}
-println ("\nCaelus API: CurseForge-$caelus_api_file_id")
-
 / Illusive Maven /
 repositories { maven { url = "https://maven.theillusivec4.top/" }}
 
@@ -30,3 +25,8 @@ repositories { maven { url = "https://maven.theillusivec4.top/" }}
 def curios_api_version = "9.2.2+1.21.1" // https://maven.theillusivec4.top/top/theillusivec4/curios/curios-neoforge/
 dependencies { modCompileOnly ( "top.theillusivec4.curios:curios-neoforge:${curios_api_version}:api" )}
 dependencies { modLocalRuntime ( "top.theillusivec4.curios:curios-neoforge:${curios_api_version}" )}
+
+/ Caelus API /
+def caelus_api_version = "7.0.1+1.21.1" // https://www.curseforge.com/minecraft/mc-mods/caelus/files/all?page=1&pageSize=20&version=1.21.1&gameVersionTypeId=6
+dependencies { modCompileOnly ( "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_api_version}:api" )}
+dependencies { modLocalRuntime ( "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_api_version}" )}
