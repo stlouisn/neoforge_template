@@ -7,16 +7,16 @@ import net.neoforged.fml.config.ModConfig.Type;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Mod(Constants.MOD_ID)
+@Mod(ModName.MOD_ID)
 public final class ModName {
 
-	public static final String MOD_ID = "anvilrestoration";
+    public static final String MOD_ID = "anvilrestoration";
 
-	@SuppressWarnings("unused")
-  public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    @SuppressWarnings("unused")
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-  public ModName(ModContainer container) {
-    container.registerConfig(Type.COMMON, ConfigHandler.configSpec);
-  }
-  
+    public ModName(ModContainer container) {
+        container.registerConfig(Type.COMMON, ConfigHandler.configSpec);
+    }
+
 }
